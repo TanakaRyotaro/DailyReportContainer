@@ -33,6 +33,7 @@ RUN mysqld_safe & sleep 5 && cat /tmp/mysql_setup.sql | mysql
 EXPOSE 3306
 
 # 7. 一般ユーザmyuserの作成およびmyuserでログイン
+RUN apt-get update
 RUN apt -y install sudo
 RUN useradd -s /bin/bash -G sudo -m myuser
 RUN echo "myuser:mypass" | chpasswd
