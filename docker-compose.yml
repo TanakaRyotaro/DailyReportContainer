@@ -5,7 +5,7 @@ services:
   # Apache2・Java用のコンテナ（webという名前は任意で設定したもの）
   web:
     build: ./web          # Dockerfileが格納されたフォルダの相対パス
-    image: "myimage:report"  # 設定したいコンテナイメージ名
+    image: "myimage:webreport"  # 設定したいコンテナイメージ名
     ports:                # ポートフォワーディングの設定
       - 80:80
       - 443:443
@@ -15,7 +15,7 @@ services:
   # MySQL用のコンテナ（dbという名前は任意で設定したもの）
   db:
     build: ./db
-    image: "myimage:report"
+    image: "myimage:dbreport"
     ports:
       - 4306:3306
     expose:               # 他のコンテナと通信できるポート番号の指定
